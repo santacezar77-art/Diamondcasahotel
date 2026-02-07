@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npx react-router build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": "react-router",
+  "nodeVersion": "20.x"
+}
