@@ -78,6 +78,32 @@ export default defineConfig({
     dedupe: ['react', 'react-dom'],
   },
   clearScreen: false,
+  esbuild: {
+    target: 'esnext',
+    supported: {
+      'top-level-await': true,
+    },
+  },
+  build: {
+    target: 'esnext',
+    minify: 'esbuild',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        format: 'es',
+      },
+    },
+  },
+  ssr: {
+    target: 'node',
+    external: [
+      'hono',
+      '@hono/auth-js',
+      '@auth/core',
+      '@neondatabase/serverless',
+      'react-router-hono-server',
+    ],
+  },
   server: {
     allowedHosts: true,
     host: '0.0.0.0',
