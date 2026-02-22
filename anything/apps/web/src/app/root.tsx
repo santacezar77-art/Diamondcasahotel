@@ -30,6 +30,7 @@ import { serializeError } from 'serialize-error';
 import { Toaster } from 'sonner';
 // @ts-ignore
 import { LoadFonts } from 'virtual:load-fonts.jsx';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { HotReloadIndicator } from '../__create/HotReload';
 import { useSandboxStore } from '../__create/hmr-sandbox-store';
 import type { Route } from './+types/root';
@@ -472,6 +473,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <Toaster position="bottom-right" />
         <ScrollRestoration />
         <Scripts />
+        <SpeedInsights />
         <script src="https://kit.fontawesome.com/2c15cc0cc7.js" crossOrigin="anonymous" async />
       </body>
     </html>
